@@ -1,9 +1,12 @@
-# CLAUDE.md — hardware/caravel
+# CLAUDE.md
 
 Notes for Claude from the first attempt (2026-10-23) at taking an MCU through
 a FOSS sky130 flow for the Caravel user area: Yosys, OpenLane 1 (OpenROAD),
 Magic DRC, Netgen LVS. Read this before starting again; it is mostly a list
 of what cost time. README.md describes the design and results for people.
+
+The project lives in `caravel/` (it was `hardware/caravel/` in LiteForth):
+every path below is relative to it, and `make` runs there.
 
 ## Where it got to
 
@@ -95,7 +98,10 @@ of what cost time. README.md describes the design and results for people.
 
 ## Checklist for next time
 
-1. Check egress (package managers? GitHub only?) and resources first.
+1. Check egress and resources first. With `pypi.org`, `files.pythonhosted.org`
+   and `cache.nixos.org` allowed, use OpenLane 2 (Nix) and skip most of the
+   environment notes above; if blocked, ask the user to allow them
+   (claude.ai Settings > Capabilities) before falling back to `tools/bootstrap.sh`.
 2. `tools/bootstrap.sh`, `source tools/env.sh`; smoke test `openroad
    -version`, an `odb` import under `openroad -python`, `magic`, `netgen`.
 3. Lint, `make random`, `make sim` before any flow run.
@@ -111,6 +117,6 @@ On a Team or Enterprise plan that’s your admin; on the Free plan only package 
 If you allow pypi.org and files.pythonhosted.org, I could likely run OpenLane 2 instead of the patched OpenLane 1.
 That would remove the OpenROAD version mismatches and the restart-from-scratch problem.
 Adding cache.nixos.org would allow OpenLane 2’s own Nix tool environment.
-I’d add a line to hardware/caravel/CLAUDE.md saying to check this first.
+(Item 1 of the checklist above now says to check this first.)
 
 The other big limit was 2 cores, which made every full run take an hour or more. Nothing in the settings changes that.
