@@ -5,7 +5,7 @@ through an all-FOSS flow: Icarus/Verilator for simulation, Yosys for
 synthesis, OpenLane 1.0.2 (OpenROAD) for place and route, Magic for DRC and
 Netgen for LVS, on the sky130A PDK. It was an experiment to find the pain
 points, done by Claude in a sandbox with only GitHub access; the
-architecture is expected to be reworked. `CLAUDE.md` has the detailed notes.
+architecture is expected to be reworked. `../CLAUDE.md` (repo root) has the detailed notes.
 
 ## Design
 

@@ -13,4 +13,4 @@ Claude first built the RAM from 4096 flip-flops, and OpenROAD's hold fixing on t
 Where it got to: an RV32E MCU (UART, GPIO, timer, 2 KB SRAM22) verified in simulation against a reference model. An earlier flip-flop-RAM version passed Magic DRC and Netgen LVS. The SRAM22 version routed cleanly but needs one more run after a pin fix in the SRAM's LEF. The Caravel wrapper is not hardened yet.
 
 - [`caravel/README.md`](caravel/README.md): the design, how to run the simulations, results.
-- [`caravel/CLAUDE.md`](caravel/CLAUDE.md): Claude's notes on what went wrong and how it was worked around. Point Claude at it before the next attempt.
+- [`CLAUDE.md`](CLAUDE.md): Claude's notes on what went wrong and how it was worked around. Claude Code loads it automatically when working in this repo.
